@@ -1,1 +1,1 @@
-# chatbot-git-actions-deploy
+# git-actions-deploy
