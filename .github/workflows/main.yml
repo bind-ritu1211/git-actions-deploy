@@ -1,1 +1,2 @@
 name: Python CI/CD
+on: [push]
