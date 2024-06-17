@@ -5,12 +5,20 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  black_check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-  test:
+        with:
+          fetch-depth: 1
+      - name: Install black
+        run: |
+          pip install black
+          black . --check
+        continue-on-error: false
+        
+  run_pytest_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
